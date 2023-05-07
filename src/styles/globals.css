@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Q&Aで利用 */
+h4 {
+  position: relative;
+  padding: 1rem 2rem;
+  background: rgb(66, 66, 207);
+  color: white;
+  border-radius: 10px;
+}
+h4:after {
+  position: absolute;
+  bottom: -10px;
+  left: 1.5em;
+  width: 0;
+  height: 0;
+  border-width: 10px 10px 0 10px;
+  border-style: solid;
+  border-color: rgb(66, 66, 207) transparent transparent transparent;
+  content: "";
+}

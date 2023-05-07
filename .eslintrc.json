@@ -1,0 +1,16 @@
+{
+  "extends": ["next/core-web-vitals", "plugin:import/errors"],
+  "rules": {
+    "no-var": "error",
+    "react/jsx-sort-props": "warn",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "alphabetize": {
+          "order": "asc"
+        }
+      }
+    ]
+  }
+}
