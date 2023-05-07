@@ -14,7 +14,7 @@ type Props = {
 export const Card = ({ data, onClickCard }: Props) => {
   const { id, name, note } = data
   const [copied, setCopied] = useState(false)
-  const url = `${window.location.protocol}//${window.location.hostname}:${window.location.port}/${id}`
+  const url = `${window.location.protocol}//${window.location.hostname}/${id}`
 
   const handleCopy = () => {
     setCopied(true)
