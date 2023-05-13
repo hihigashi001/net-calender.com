@@ -1,4 +1,7 @@
 import { Html, Head, Main, NextScript } from "next/document"
+import Script from "next/script"
+
+import * as gtag from "@/lib/gtag"
 
 export default function Document() {
   return (
@@ -43,6 +46,23 @@ export default function Document() {
           name="twitter:description"
         />
         <meta content="https://net-calender.com/net-calender-image.png" name="twitter:image" />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${gtag.GA_MEASUREMENT_ID}`}
+          strategy="afterInteractive"
+        />
+        <Script
+          dangerouslySetInnerHTML={{
+            __html: `
+           window.dataLayer = window.dataLayer || [];
+           function gtag(){dataLayer.push(arguments);}
+           gtag('js', new Date());
+ 
+           gtag('config', '${gtag.GA_MEASUREMENT_ID}');
+           `,
+          }}
+          id="gtag-init"
+          strategy="afterInteractive"
+        />
       </Head>
       <body className="text-gray-800 bg-gray-200">
         <Main />
